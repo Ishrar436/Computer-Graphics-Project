@@ -4,13 +4,19 @@
 #include "Scene2.h"
 #include "Scene3.h"
 #include "Scene4.h"
+<<<<<<< HEAD
 #include "Scene5.h"   // NEW
+=======
+>>>>>>> origin/member4
 
 static Scene1 scene1;
 static Scene2 scene2;
 static Scene3 scene3;
 static Scene4 scene4;
+<<<<<<< HEAD
 static Scene5 scene5; // NEW
+=======
+>>>>>>> origin/member4
 
 static int activeScene = 1;
 
@@ -24,28 +30,41 @@ static void setScene(int newScene)
     else if (activeScene == 2) scene2.initGL();
     else if (activeScene == 3) scene3.initGL();
     else if (activeScene == 4) scene4.initGL();
+<<<<<<< HEAD
     else if (activeScene == 5) scene5.initGL(); // NEW
+=======
+>>>>>>> origin/member4
 
     // window titles
     if      (activeScene == 1) glutSetWindowTitle("Love Story - Scene 1: The Meeting");
     else if (activeScene == 2) glutSetWindowTitle("Love Story - Scene 2: The Rain");
     else if (activeScene == 3) glutSetWindowTitle("Love Story - Scene 3: The Farewell");
     else if (activeScene == 4) glutSetWindowTitle("Love Story - Scene 4: Lonely Night");
+<<<<<<< HEAD
     else if (activeScene == 5) glutSetWindowTitle("Love Story - Scene 5: The Bridge Walk"); // NEW
+=======
+>>>>>>> origin/member4
 
     glutPostRedisplay();
 }
 
 static void display()
 {
+<<<<<<< HEAD
     // IMPORTANT:
     // Your scenes already call glutSwapBuffers() inside their draw().
     // So we DO NOT call glutSwapBuffers() here (otherwise white screen / flicker).
+=======
+>>>>>>> origin/member4
     if      (activeScene == 1) scene1.draw();
     else if (activeScene == 2) scene2.draw();
     else if (activeScene == 3) scene3.draw();
     else if (activeScene == 4) scene4.draw();
+<<<<<<< HEAD
     else if (activeScene == 5) scene5.draw();  // NEW
+=======
+
+>>>>>>> origin/member4
     glutSwapBuffers();
 }
 
@@ -56,14 +75,20 @@ static void keyboard(unsigned char key, int x, int y)
     if (key == '2') { setScene(2); return; }
     if (key == '3') { setScene(3); return; }
     if (key == '4') { setScene(4); return; }
+<<<<<<< HEAD
     if (key == '5') { setScene(5); return; } // NEW
+=======
+>>>>>>> origin/member4
 
     // forward key to active scene
     if      (activeScene == 1) scene1.keyDown(key);
     else if (activeScene == 2) scene2.keyDown(key);
     else if (activeScene == 3) scene3.keyDown(key);
     else if (activeScene == 4) scene4.keyDown(key);
+<<<<<<< HEAD
     else if (activeScene == 5) scene5.keyDown(key); // NEW
+=======
+>>>>>>> origin/member4
 }
 
 static void specialKeys(int key, int x, int y)
@@ -72,16 +97,24 @@ static void specialKeys(int key, int x, int y)
     else if (activeScene == 2) scene2.specialDown(key);
     //else if (activeScene == 3) scene3.specialDown(key);
     else if (activeScene == 4) scene4.specialDown(key);
+<<<<<<< HEAD
     //else if (activeScene == 5) scene5.specialDown(key); // NEW
+=======
+>>>>>>> origin/member4
 }
 
 static void timer(int value)
 {
     if      (activeScene == 1) scene1.update();
     else if (activeScene == 2) scene2.update();
+<<<<<<< HEAD
     else if (activeScene == 3) scene3.update(0.016f);     // if yours is update(float), change to: scene3.update(0.016f);
     else if (activeScene == 4) scene4.update();
     else if (activeScene == 5) scene5.update(0.016f);     // NEW
+=======
+    else if (activeScene == 3) scene3.update(0.016f);
+    else if (activeScene == 4) scene4.update();
+>>>>>>> origin/member4
 
     glutPostRedisplay();
     glutTimerFunc(16, timer, 0);
