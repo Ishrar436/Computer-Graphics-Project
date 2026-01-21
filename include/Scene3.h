@@ -20,7 +20,7 @@ public:
 
 
 private:
-    // ----------- helpers -----------
+
     void setColor(float r, float g, float b) { glColor3f(r, g, b); }
 
 
@@ -36,44 +36,50 @@ private:
     void drawCloud(float x, float y, float scale);
     void drawAllClouds();
     bool boyChasingTrain = false;
-bool boyMissedTrain  = false;
-float trainDoorWorldX = 0.0f;
-void drawWomanInTrain();
+    bool boyMissedTrain  = false;
+    float trainDoorWorldX = 0.0f;
+    void drawWomanInTrain(float wx, float wy);
+    void drawMoon();
+    void drawEmptyNightTrain()
+;
 
-    // ----------- state -----------
-    // Train
     float trainX = 0.0f;
     bool trainMoving = false;
     bool trainGone = false;
     float cloud1X, cloud2X, cloud3X;
 
-    // Letter
+
     bool letterVisible = false;
     bool letterArriving = false;
     bool letterArrived = false;
     float letterX = 1.2f;
-    float letterY = -0.08f;     // on platform area
-    float letterFloatT = 0.0f;  // small float wave
+    float letterY = -0.08f;
+    float letterFloatT = 0.0f;
 
-    // Boy
+
     float boyX = 0.30f;
     float boyY = -0.25f;
     bool boyMovingToLetter = false;
     bool boyPickedLetter = false;
     float runPhase = 0.0f;
 
-    // Broken heart + time-lapse
+    float nightTrainX;
+    bool nightTrainArriving;
+    bool nightTrainArrived;
+
+
+
     bool heartVisible = false;
     bool timeLapse = false;
-    float dayToNight = 0.0f; // 0 day -> 1 night
+    float dayToNight = 0.0f;
 
-    // Clock angles (radians)
+
     float minuteAng = 0.0f;
     float hourAng = 0.0f;
 
-    // Sun position
-    float sunY = 0.82f; // starts high
 
-    // cached letter stop position
+    float sunY = 0.82f;
+
+
     float letterStopX = 0.55f;
 };
